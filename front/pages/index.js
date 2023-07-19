@@ -44,7 +44,7 @@ export default function Home() {
       <main className={styles.main}>
         <Grid container spacing={{ xs: 5, md: 5 }} maxWidth={'90%'}>
           <Grid item xs={12}>
-          {activeStep === 2 ? <h2>Mes filleuls 4/8</h2> : ''}
+          {activeStep === 2 ? <h2>Les parrains disponibles</h2> : ''}
           </Grid>
           <Grid item xs={8}  justifyContent={'space-around'}>
           {activeStep === 2 ? <ListOfCard userData={alumni} /> : ''}
