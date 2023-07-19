@@ -19,7 +19,7 @@ export default function Home() {
   };
 
   const handleReset = () => {
-    setActiveStep(0);
+    setActiveStep(1);
   };
 
   const [alumni, setAlumni] = React.useState({
