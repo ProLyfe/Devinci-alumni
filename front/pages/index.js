@@ -1,9 +1,12 @@
+import * as React from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
+import CustomStepper from '../components/CustomStepper';
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +20,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Devinci Alumni
         </h1>
+        <CustomStepper/>
       </main>
 
       <footer className={styles.footer}>
