@@ -1,0 +1,35 @@
+.header {
+    min-width: 100%;
+    background-color: white;
+    max-width: 70rem;
+    padding-top: 1rem;
+}
+
+.logoHeader {
+    max-width: 70rem;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logoSubHeader {
+    max-width: 70rem;
+    width: 100%;
+}
+
+.subHeaderContainer {
+    min-width: 100%;
+    background-color: #6858a1;
+    padding: .5rem 1rem;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.subHeader {
+    max-width: 70rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
