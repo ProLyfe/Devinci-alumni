@@ -4,8 +4,23 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import CustomStepper from '../components/CustomStepper';
+import ListOfCard from '../components/ListOfCard';
+import { Grid } from '@mui/material';
 
 export default function Home() {
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
   return (
     <div className={styles.container}>
@@ -20,7 +35,20 @@ export default function Home() {
         <h1 className={styles.title}>
           Devinci Alumni
         </h1>
-        <CustomStepper/>
+        <Grid container spacing={{ xs: 2, md: 3 }}>
+          <Grid item xs={8}  justifyContent={'space-around'}>
+          {activeStep === 2 ? <ListOfCard type={'alumni'}/> : ''}
+          </Grid>
+          <Grid item xs={4}>
+            <CustomStepper
+              activeStep={activeStep}
+              handleNext={handleNext}
+              handleBack={handleBack}
+              handleReset={handleReset}
+            />
+          </Grid>
+        </Grid>
+        
       </main>
 
       <footer className={styles.footer}>
