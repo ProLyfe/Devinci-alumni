@@ -6,6 +6,10 @@ import Header from '../components/Header'
 import CustomStepper from '../components/CustomStepper';
 import ListOfCard from '../components/ListOfCard';
 import { Grid } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
+import TextField from '@mui/material/TextField';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 export default function Home() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -22,6 +26,17 @@ export default function Home() {
     setActiveStep(0);
   };
 
+  const [alumni, setAlumni] = React.useState({
+    firstname: 'Didier',
+    lastname: 'Petit',
+    description: '',
+    numberOfPeople: 0,
+    description: '',
+    work: '',
+    image: 'alumni-0.jpg',
+    degree: 'IWM'
+  }); 
+
   return (
     <div className={styles.container}>
       <Head>
@@ -32,12 +47,33 @@ export default function Home() {
       <Header/>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Devinci Alumni
-        </h1>
         <Grid container spacing={{ xs: 2, md: 3 }}>
           <Grid item xs={8}  justifyContent={'space-around'}>
-          {activeStep === 2 ? <ListOfCard type={'alumni'}/> : ''}
+            {
+              activeStep === 1 ? (
+                <div className={styles.formContainer}>
+                  <h1 className={styles.formTitle}>Formulaire</h1>
+                  <FormControl fullWidth>
+                    <TextField type="text" variant='outlined' defaultValue="Paul" fullWidth label="Nom" sx={{ marginBottom: 4 }}/>
+                    <TextField type="text" variant='outlined' defaultValue="Dupont" fullWidth label="Prénom" sx={{ marginBottom: 4 }}/>
+                    <TextField type="text" variant='outlined' defaultValue="Présentez vous" fullWidth label="Présentation" sx={{ marginBottom: 4 }}/>
+                    <TextField type="text" variant='outlined' defaultValue="Poste actuel" fullWidth label="Poste actuel" sx={{ marginBottom: 4 }}/>
+                    <TextField type="text" variant='outlined' defaultValue="Mail" fullWidth label="Mail" sx={{ marginBottom: 4 }}/>
+                    <Select
+                      label="Diplôme"
+                      placeholder="Sélectionner votre diplôme"
+                      sx={{ marginBottom: 4 }}
+                    >
+                      <MenuItem value={10}>Mastère de l'ingénierie web et mobile</MenuItem>
+                      <MenuItem value={20}>Mastère mangagement de la Transformation Digital</MenuItem>
+                      <MenuItem value={30}>Mastère Développeur FullStack</MenuItem>
+                      <MenuItem value={30}>Mastère Créative Technology</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              ) :
+              activeStep === 2 ? <ListOfCard type={'alumni'}/> : ''
+            }
           </Grid>
           <Grid item xs={4}>
             <CustomStepper
