@@ -6,28 +6,82 @@ import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import EmailIcon from '@mui/icons-material/Email';
+import BadgeIcon from '@mui/icons-material/Badge';
+import ChecklistIcon from '@mui/icons-material/Checklist';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 const steps = [
   {
-    label: 'Select campaign settings',
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+    label: 'Mail de présentation',
+    description: `Présentation du parrainage et des étapes suivantes`,
+    date: '1 janvier - 28 février',
   },
   {
-    label: 'Create an ad group',
+    label: 'Fiche Parrain',
     description:
-      'An ad group contains one or more ads which target a shared set of keywords.',
+      'Remplir les informations nécessaires',
+      date: '1 mars - 30 avril',
   },
   {
-    label: 'Create an ad',
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
+    label: 'Choix des Parrains',
+    description: `Demande des filleuls aux parrains`,
+    date: 'À partir du 15 avril',
+  },
+  {
+    label: 'Premier contact',
+    description: `Présentation des filleuls avec leur parrain`,
+    date: '1 Mai',
   },
 ];
+
+
+const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#fff',
+  zIndex: 1,
+  color: '#000',
+  width: 70,
+  height: 70,
+  display: 'flex',
+  border: 'solid',
+  borderWidth: 'thick',
+  borderColor: 'gainsboro',
+  borderRadius: '50%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  ...(ownerState.active && {
+    border: 'none',
+    color: '#fff',
+    backgroundColor:
+      '#D7CDFF',
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
+  }),
+  ...(ownerState.completed && {
+    border: 'none',
+    color: '#fff',
+    backgroundColor:
+      '#D7CDFF',
+  }),
+}));
+
+function ColorlibStepIcon(props) {
+  const { active, completed, className } = props;
+
+  const icons = {
+    1: <EmailIcon />,
+    2: <BadgeIcon />,
+    3: <ChecklistIcon />,
+    4: <GroupsIcon />,
+  };
+
+  return (
+    <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
+      {icons[String(props.icon)]}
+    </ColorlibStepIconRoot>
+  );
+}
 
 const CustomStepper = (props) => {
   const {
@@ -42,16 +96,15 @@ const CustomStepper = (props) => {
         {steps.map((step, index) => (
           <Step key={step.label}>
             <StepLabel
+            StepIconComponent={ColorlibStepIcon}
               optional={
-                index === 2 ? (
-                  <Typography variant="caption">Last step</Typography>
-                ) : null
+                  <Typography variant="caption">{step.date}</Typography>
               }
             >
               {step.label}
             </StepLabel>
             <StepContent>
-              <Typography>{step.description}</Typography>
+              <Typography variant="string" style={{color:"#000000"}}>{step.description}</Typography>
               <Box sx={{ mb: 2 }}>
                 <div>
                   <Button

@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   const handleReset = () => {
-    setActiveStep(0);
+    setActiveStep(1);
   };
 
   const [alumni, setAlumni] = React.useState({
@@ -31,11 +31,12 @@ export default function Home() {
     lastname: 'Petit',
     description: '',
     numberOfPeople: 0,
-    description: '',
-    work: '',
+    numberOfPeople: 0,
+    description: 'Salut ! Je suis développeur Full-Stack en Freelance',
+    work: 'Développeur Full-Stack',
     image: 'alumni-0.jpg',
     degree: 'IWM'
-  }); 
+  });
 
   return (
     <div className={styles.container}>
@@ -74,6 +75,12 @@ export default function Home() {
               ) :
               activeStep === 2 ? <ListOfCard type={'alumni'}/> : ''
             }
+        <Grid container spacing={{ xs: 5, md: 5 }} maxWidth={'90%'}>
+          <Grid item xs={12}>
+          {activeStep === 2 ? <h2>Mes filleuls 4/8</h2> : ''}
+          </Grid>
+          <Grid item xs={8}  justifyContent={'space-around'}>
+          {activeStep === 2 ? <ListOfCard userData={alumni} /> : ''}
           </Grid>
           <Grid item xs={4}>
             <CustomStepper
