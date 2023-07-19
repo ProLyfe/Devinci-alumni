@@ -5,13 +5,55 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import CustomCard from './CustomCard';
 
-export default function ResponsiveGrid({ type }) {
+const allUsers = [
+    {
+        firstname: 'Benjamin',
+        lastname: 'Huppé',
+        numberOfPeople: 3,
+        description: 'Salut ! Je suis développeur Full-Stack chez Crédit Agricole.',
+        work: 'Développeur Full-stack',
+        image: 'alumni-1.jpg',
+        degree: 'IWM' 
+    },
+    {
+        firstname: 'Rachelle',
+        lastname: 'Brisebois',
+        numberOfPeople: 2,
+        description: 'Salut ! Je suis développeur Front chez Crédit Foncia.',
+        work: 'Développeur Front',
+        image: 'alumni-2.jpg',
+        degree: 'IWM' 
+    },
+    {
+        firstname: 'Xavier',
+        lastname: 'Montiny',
+        numberOfPeople: 2,
+        description: 'Salut ! Je suis chef de projet chez société générale.',
+        work: 'Chef de projet',
+        image: 'alumni-3.jpg',
+        degree: 'MTD' 
+    },
+    {
+        firstname: 'Marcel',
+        lastname: 'Drouin',
+        numberOfPeople: 1,
+        description: 'Salut ! Je suis chef de projet chez SFR.',
+        work: 'Chef de projet',
+        image: 'alumni-4.jpg',
+        degree: 'MTD' 
+    },
+]
+
+export default function ResponsiveGrid({ userData }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid sx={{ maxWidth: 845 }} container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-        {Array.from(Array(4)).map((_, index) => (
+        <Grid item xs={2} sm={4} md={4}>
+            <CustomCard userData={userData}/>
+        </Grid>
+        {allUsers.map((userData, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
-            <CustomCard type={type} index={index}/>
+            <CustomCard userData={userData}/>
           </Grid>
         ))}
       </Grid>
