@@ -20,13 +20,13 @@ const steps = [
     date: '1 janvier - 28 février',
   },
   {
-    label: 'Fiche Parrain',
+    label: 'Fiche étudiant',
     description:
       'Remplir les informations nécessaires',
       date: '1 mars - 30 avril',
   },
   {
-    label: 'Choix des Parrains',
+    label: 'Choix des parrains',
     description: `Demande des filleuls aux parrains`,
     date: 'À partir du 15 avril',
   },

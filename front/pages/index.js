@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 export default function Home() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [userSelected, setUserSelected] = React.useState(null);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -29,13 +30,12 @@ export default function Home() {
   const [alumni, setAlumni] = React.useState({
     firstname: 'Didier',
     lastname: 'Petit',
-    description: '',
-    numberOfPeople: 0,
     numberOfPeople: 0,
     description: 'Salut ! Je suis développeur Full-Stack en Freelance',
     work: 'Développeur Full-Stack',
     image: 'alumni-0.jpg',
-    degree: 'IWM'
+    degree: 'IWM',
+    id: 1
   });
 
   return (
@@ -48,9 +48,12 @@ export default function Home() {
       <Header/>
 
       <main className={styles.main}>
-        <Grid container spacing={{ xs: 2, md: 3 }}>
+        <Grid container spacing={{ xs: 5, md: 5 }} maxWidth={'90%'}>
+          <Grid item xs={12}>
+          {activeStep === 2 ? <h2>Parrains disponibles</h2> : ''}
+          </Grid>
           <Grid item xs={8}  justifyContent={'space-around'}>
-            {
+          {
               activeStep === 1 ? (
                 <div className={styles.formContainer}>
                   <h1 className={styles.formTitle}>Formulaire</h1>
@@ -73,14 +76,14 @@ export default function Home() {
                   </FormControl>
                 </div>
               ) :
-              activeStep === 2 ? <ListOfCard type={'alumni'}/> : ''
+              activeStep === 2 ? <ListOfCard
+              type={'alumni'}
+              userData={alumni}
+              setActiveStep={setActiveStep}
+              userSelected={userSelected}
+              setUserSelected={setUserSelected}
+              /> : ''
             }
-        <Grid container spacing={{ xs: 5, md: 5 }} maxWidth={'90%'}>
-          <Grid item xs={12}>
-          {activeStep === 2 ? <h2>Mes filleuls 4/8</h2> : ''}
-          </Grid>
-          <Grid item xs={8}  justifyContent={'space-around'}>
-          {activeStep === 2 ? <ListOfCard userData={alumni} /> : ''}
           </Grid>
           <Grid item xs={4}>
             <CustomStepper
