@@ -16,16 +16,16 @@ const Header = () => (
         </div>
         <div className={styles.subHeaderContainer}>
            <div className={styles.subHeader}>
-                <a href="">ACTUS</a>
-                <a href="">EVENTS</a>
-                <a href="">GROUPES</a>
-                <a href="">CARRIÈRE</a>
-                <a href="">LIFELONG LEARNING</a>
-                <a href="">S'ENGAGER</a>
-                <a href="">ANNUAIRE</a>
-                <a href="">SERVICES</a>
-                <a href="">CONTACT</a>
-                <Link href="/parrain">PARRAINAGE</Link>
+                <a href="" className={styles.header}>ACTUS</a>
+                <a href="" className={styles.header}>EVENTS</a>
+                <a href="" className={styles.header}>GROUPES</a>
+                <a href="" className={styles.header}>CARRIÈRE</a>
+                <a href="" className={styles.header}>LIFELONG LEARNING</a>
+                <a href="" className={styles.header}>S'ENGAGER</a>
+                <a href="" className={styles.header}>ANNUAIRE</a>
+                <a href="" className={styles.header}>SERVICES</a>
+                <a href="" className={styles.header}>CONTACT</a>
+                <Link href="/parrain" className={styles.header}>PARRAINAGE</Link>
            </div>
         </div>
     </header>
