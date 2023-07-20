@@ -89,6 +89,7 @@ const CustomStepper = (props) => {
         handleNext,
         handleBack,
         handleReset,
+        sendEmail
   } = props
   return (
     <Box sx={{ maxWidth: 400 }}>
@@ -109,17 +110,17 @@ const CustomStepper = (props) => {
                 <div>
                   <Button
                     variant="contained"
-                    onClick={handleNext}
-                    sx={{ mt: 1, mr: 1 }}
+                    onClick={() => handleNext(step.label)}
+                    sx={{ mt: 1, mr: 1, backgroundColor: '#6858a1' }}
                   >
-                    {index === steps.length - 1 ? 'Finish' : 'Continue'}
+                    {index === steps.length - 1 ? 'Terminer' : 'Suivant'}
                   </Button>
                   <Button
                     disabled={index === 0}
                     onClick={handleBack}
                     sx={{ mt: 1, mr: 1 }}
                   >
-                    Back
+                    Retour
                   </Button>
                 </div>
               </Box>
@@ -129,9 +130,9 @@ const CustomStepper = (props) => {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
+          <Typography>Merci</Typography>
           <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-            Reset
+            Terminer
           </Button>
         </Paper>
       )}
