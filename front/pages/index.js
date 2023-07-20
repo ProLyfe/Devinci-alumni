@@ -67,7 +67,7 @@ export default function Home() {
         <form ref={form}></form>
         <Grid container spacing={{ xs: 5, md: 5 }} maxWidth={'90%'}>
           <Grid item xs={12}>
-          {activeStep === 2 ? <h2>Parrains disponibles</h2> : ''}
+          {activeStep === 2 ? <h2 style={{color: 'black'}}>Parrains disponibles</h2> : ''}
           </Grid>
           <Grid item xs={8}  justifyContent={'space-around'}>
           {

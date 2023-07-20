@@ -51,7 +51,7 @@ export default function Parrain() {
       <main className={styles.main}>
         <Grid container spacing={{ xs: 5, md: 5 }} maxWidth={'90%'}>
           <Grid item xs={12}>
-          {activeStep === 2 ? <h2>Mes filleuls</h2> : ''}
+          {activeStep === 2 ? <h2 style={{color: 'black'}}>Mes filleuls</h2> : ''}
           </Grid>
           <Grid item xs={8}  justifyContent={'space-around'}>
           {
