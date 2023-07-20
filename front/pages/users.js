@@ -12,8 +12,8 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import CustomCalendar from '../components/CustomCalendar';
 
-export default function Parrain() {
-  const [activeStep, setActiveStep] = React.useState(0);
+export default function Users() {
+  const [activeStep, setActiveStep] = React.useState(2);
   const [userSelected, setUserSelected] = React.useState(null);
 
   const handleNext = () => {
