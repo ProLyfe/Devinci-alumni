@@ -78,6 +78,7 @@ export default function Home() {
                 </div>
               ) :
               activeStep === 2 ? <ListOfCard
+              noBtn={false}
               type={'alumni'}
               userData={alumni}
               setActiveStep={setActiveStep}

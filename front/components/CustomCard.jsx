@@ -9,7 +9,8 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import CustomDialog from '../components/CustomDialog'
 
-export default function MultiActionAreaCard({ userData, setActiveStep, userSelected, setUserSelected }) {
+export default function MultiActionAreaCard({ userData, setActiveStep, userSelected, setUserSelected, noBtn }) {
+  console.log(noBtn)
     const MySwal = withReactContent(Swal)
     const isSelected = userSelected === userData.id
 
@@ -54,7 +55,7 @@ export default function MultiActionAreaCard({ userData, setActiveStep, userSelec
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
+          {!noBtn ? <CardActions>
             {isSelected ? <Button
               size="small"
               color="primary"
@@ -71,7 +72,7 @@ export default function MultiActionAreaCard({ userData, setActiveStep, userSelec
               >
             Choisir
             </Button>}
-          </CardActions>
+          </CardActions> : '' }
         </Card>
       </Paper>
       <CustomDialog
