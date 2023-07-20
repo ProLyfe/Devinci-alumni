@@ -48,21 +48,46 @@ const allUsers = [
     },
 ]
 
-export default function ResponsiveGrid({ userData, setActiveStep, userSelected, setUserSelected }) {
+const filleuls = [
+  {
+      firstname: 'Michael',
+      lastname: 'Hulle',
+      numberOfPeople: 3,
+      description: 'Salut ! Je suis alternant chef de projet',
+      work: 'Alternant chef de projet',
+      image: 'filleul-1.jpg',
+      degree: 'MDT',
+      id: 2
+  }
+]
+
+export default function ResponsiveGrid({ userData, setActiveStep, userSelected, setUserSelected, noBtn }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid sx={{ maxWidth: 845 }} container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         <Grid item xs={2} sm={4} md={4}>
             <CustomCard
+            noBtn={noBtn}
               userData={userData}
               setActiveStep={setActiveStep}
               userSelected={userSelected}
               setUserSelected={setUserSelected}
             />
         </Grid>
-        {allUsers.map((userData, index) => (
+        {noBtn ? filleuls.map((userData, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
             <CustomCard
+              noBtn={noBtn}
+              userData={userData}
+              setActiveStep={setActiveStep}
+              userSelected={userSelected}
+              setUserSelected={setUserSelected}
+            />
+          </Grid>
+        )) : allUsers.map((userData, index) => (
+          <Grid item xs={2} sm={4} md={4} key={index}>
+            <CustomCard
+              noBtn={noBtn}
               userData={userData}
               setActiveStep={setActiveStep}
               userSelected={userSelected}

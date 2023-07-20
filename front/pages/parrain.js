@@ -29,12 +29,12 @@ export default function Parrain() {
   };
 
   const [alumni, setAlumni] = React.useState({
-    firstname: 'Didier',
-    lastname: 'Petit',
+    firstname: 'Olivier',
+    lastname: 'Dupont',
     numberOfPeople: 0,
-    description: 'Salut ! Je suis développeur Full-Stack en Freelance',
-    work: 'Développeur Full-Stack',
-    image: 'alumni-0.jpg',
+    description: 'Alternant développeur',
+    work: 'Alternant développeur',
+    image: 'filleul-0.jpg',
     degree: 'IWM',
     id: 1
   });
@@ -51,7 +51,7 @@ export default function Parrain() {
       <main className={styles.main}>
         <Grid container spacing={{ xs: 5, md: 5 }} maxWidth={'90%'}>
           <Grid item xs={12}>
-          {activeStep === 2 ? <h2>Parrains disponibles</h2> : ''}
+          {activeStep === 2 ? <h2>Mes filleuls</h2> : ''}
           </Grid>
           <Grid item xs={8}  justifyContent={'space-around'}>
           {
@@ -79,6 +79,7 @@ export default function Parrain() {
                 </div>
               ) :
               activeStep === 2 ? <ListOfCard
+              noBtn={true}
               type={'alumni'}
               userData={alumni}
               setActiveStep={setActiveStep}
