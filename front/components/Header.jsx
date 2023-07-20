@@ -16,16 +16,16 @@ const Header = () => (
         </div>
         <div className={styles.subHeaderContainer}>
            <div className={styles.subHeader}>
-                <a href="" className={styles.navLinks}>ACTUS</a>
-                <a href="" className={styles.navLinks}>EVENTS</a>
-                <a href="" className={styles.navLinks}>GROUPES</a>
-                <a href="" className={styles.navLinks}>CARRIÈRE</a>
-                <a href="" className={styles.navLinks}>LIFELONG LEARNING</a>
-                <a href="" className={styles.navLinks}>S'ENGAGER</a>
-                <a href="" className={styles.navLinks}>ANNUAIRE</a>
-                <a href="" className={styles.navLinks}>SERVICES</a>
-                <a href="" className={styles.navLinks}>CONTACT</a>
-                <Link href="/parrain" className={styles.navLinks}>PARRAINAGE</Link>
+                <a href="" style={{ color: 'white'}}>ACTUS</a>
+                <a href="" style={{ color: 'white'}}>EVENTS</a>
+                <a href="" style={{ color: 'white'}}>GROUPES</a>
+                <a href="" style={{ color: 'white'}}>CARRIÈRE</a>
+                <a href="" style={{ color: 'white'}}>LIFELONG LEARNING</a>
+                <a href="" style={{ color: 'white'}}>S'ENGAGER</a>
+                <a href="" style={{ color: 'white'}}>ANNUAIRE</a>
+                <a href="" style={{ color: 'white'}}>SERVICES</a>
+                <a href="" style={{ color: 'white'}}>CONTACT</a>
+                <Link href="/parrain" style={{ color: 'white'}}>PARRAINAGE</Link>
            </div>
         </div>
     </header>
