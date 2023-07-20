@@ -124,6 +124,31 @@
   margin-left: 0.5rem;
 }
 
+.presentation {
+  color: black;
+}
+
+.presentation h1 {
+  font-size: 1.5rem;
+}
+
+.presentation span {
+  font-weight: bold;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 15rem;
+}
+
+.banner img {
+  width: 100%;
+  height: 15rem;
+  position: absolute;
+  object-fit: cover;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
