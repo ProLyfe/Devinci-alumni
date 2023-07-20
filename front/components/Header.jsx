@@ -16,16 +16,16 @@ const Header = () => (
         </div>
         <div className={styles.subHeaderContainer}>
            <div className={styles.subHeader}>
-                <a href="" className={styles.header}>ACTUS</a>
-                <a href="" className={styles.header}>EVENTS</a>
-                <a href="" className={styles.header}>GROUPES</a>
-                <a href="" className={styles.header}>CARRIÈRE</a>
-                <a href="" className={styles.header}>LIFELONG LEARNING</a>
-                <a href="" className={styles.header}>S'ENGAGER</a>
-                <a href="" className={styles.header}>ANNUAIRE</a>
-                <a href="" className={styles.header}>SERVICES</a>
-                <a href="" className={styles.header}>CONTACT</a>
-                <Link href="/parrain" className={styles.header}>PARRAINAGE</Link>
+                <a href="" className={styles.navLinks}>ACTUS</a>
+                <a href="" className={styles.navLinks}>EVENTS</a>
+                <a href="" className={styles.navLinks}>GROUPES</a>
+                <a href="" className={styles.navLinks}>CARRIÈRE</a>
+                <a href="" className={styles.navLinks}>LIFELONG LEARNING</a>
+                <a href="" className={styles.navLinks}>S'ENGAGER</a>
+                <a href="" className={styles.navLinks}>ANNUAIRE</a>
+                <a href="" className={styles.navLinks}>SERVICES</a>
+                <a href="" className={styles.navLinks}>CONTACT</a>
+                <Link href="/parrain" className={styles.navLinks}>PARRAINAGE</Link>
            </div>
         </div>
     </header>
