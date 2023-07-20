@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
-import CustomStepper from '../components/CustomStepper';
+import CustomParrainStepper from '../components/CustomParrainStepper';
 import ListOfCard from '../components/ListOfCard';
 import { Grid } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
@@ -12,7 +12,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import CustomCalendar from '../components/CustomCalendar';
 
-export default function Home() {
+export default function Parrain() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [userSelected, setUserSelected] = React.useState(null);
 
@@ -57,13 +57,14 @@ export default function Home() {
           {
               activeStep === 1 ? (
                 <div className={styles.formContainer}>
-                  <h1 className={styles.formTitle}>Formulaire Étudiantt</h1>
+                  <h1 className={styles.formTitle}>Formulaire Parrain</h1>
                   <FormControl fullWidth>
-                    <TextField type="text" variant='outlined' defaultValue="Paul" fullWidth label="Nom" sx={{ marginBottom: 4 }}/>
-                    <TextField type="text" variant='outlined' defaultValue="Dupont" fullWidth label="Prénom" sx={{ marginBottom: 4 }}/>
+                    <TextField type="text" variant='outlined' defaultValue="Mathieu" fullWidth label="Nom" sx={{ marginBottom: 4 }}/>
+                    <TextField type="text" variant='outlined' defaultValue="Lorent" fullWidth label="Prénom" sx={{ marginBottom: 4 }}/>
                     <TextField type="text" variant='outlined' defaultValue="Présentez vous" fullWidth label="Présentation" sx={{ marginBottom: 4 }}/>
                     <TextField type="text" variant='outlined' defaultValue="Poste actuel" fullWidth label="Poste actuel" sx={{ marginBottom: 4 }}/>
                     <TextField type="text" variant='outlined' defaultValue="Mail" fullWidth label="Mail" sx={{ marginBottom: 4 }}/>
+                    <TextField type="number" variant='outlined' defaultValue={1} fullWidth label="Nombre de filleuls souhaité (max 5)" sx={{ marginBottom: 4 }}/>
                     <Select
                       label="Diplôme"
                       placeholder="Sélectionner votre diplôme"
@@ -87,7 +88,7 @@ export default function Home() {
             }
           </Grid>
           <Grid item xs={4}>
-            <CustomStepper
+            <CustomParrainStepper
               activeStep={activeStep}
               handleNext={handleNext}
               handleBack={handleBack}

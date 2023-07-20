@@ -1,5 +1,6 @@
 import styles from '../styles/header.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => (
     <header className={styles.header}>
@@ -24,6 +25,7 @@ const Header = () => (
                 <a href="">ANNUAIRE</a>
                 <a href="">SERVICES</a>
                 <a href="">CONTACT</a>
+                <Link href="/parrain">PARRAINAGE</Link>
            </div>
         </div>
     </header>
