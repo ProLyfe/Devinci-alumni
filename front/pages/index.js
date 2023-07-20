@@ -104,7 +104,7 @@ export default function Home() {
               activeStep === 0 ? (
                 <div className={styles.presentation}>
                   <div className={styles.banner}>
-                    <Image src="/../public/banner.jpeg" layout="fill"/>
+                    <Image src="banner.jpeg" alt="banner" layout="fill"/>
                   </div>
                   <h1>Programme de Parrainage Alumnis - Pôle Universitaire Léonard de Vinci</h1>
                   <p>Chers Alumnis et étudiants,</p>
