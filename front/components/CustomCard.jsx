@@ -7,6 +7,7 @@ import Paper from '@mui/material/Paper';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import CustomDialog from '../components/CustomDialog'
 
 export default function MultiActionAreaCard({ userData, setActiveStep, userSelected, setUserSelected }) {
     const MySwal = withReactContent(Swal)
@@ -23,44 +24,61 @@ export default function MultiActionAreaCard({ userData, setActiveStep, userSelec
           })
     }
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+
+    const handleClose = (value) => {
+      setOpen(false);
+    };
+
   return (
-    <Paper elevation={isSelected ? 15 : 0}>
-      <Card>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image={userData.image}
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" textAlign={'center'}>
-              {userData.firstname} {userData.lastname}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" textAlign={'center'}>
-              {userData.work}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          {isSelected ? <Button
-            size="small"
-            color="primary"
-            style={{margin: '0 auto', display: "flex", color: "green"}}
-            disabled={true}
-            >
-              Sélectionné
-            </Button> : <Button
-            size="small"
-            color="primary"
-            style={{margin: '0 auto', display: "flex"}}
-            onClick={handleClick}
-            variant='outlined'
-            >
-          Choisir
-          </Button>}
-        </CardActions>
-      </Card>
-    </Paper>
+    <React.Fragment>
+      <Paper elevation={isSelected ? 15 : 0}>
+        <Card>
+          <CardActionArea onClick={handleClickOpen}>
+            <CardMedia
+              component="img"
+              height="140"
+              image={userData.image}
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div" textAlign={'center'}>
+                {userData.firstname} {userData.lastname}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" textAlign={'center'}>
+                {userData.work}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            {isSelected ? <Button
+              size="small"
+              color="primary"
+              style={{margin: '0 auto', display: "flex", color: "green"}}
+              disabled={true}
+              >
+                Sélectionné
+              </Button> : <Button
+              size="small"
+              color="primary"
+              style={{margin: '0 auto', display: "flex"}}
+              onClick={handleClick}
+              variant='contained'
+              >
+            Choisir
+            </Button>}
+          </CardActions>
+        </Card>
+      </Paper>
+      <CustomDialog
+        open={open}
+        onClose={handleClose}
+        userData={userData}
+      />
+    </React.Fragment>
   );
 }

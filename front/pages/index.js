@@ -10,6 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import CustomCalendar from '../components/CustomCalendar';
 
 export default function Home() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -82,7 +83,7 @@ export default function Home() {
               setActiveStep={setActiveStep}
               userSelected={userSelected}
               setUserSelected={setUserSelected}
-              /> : ''
+              /> : activeStep === 3 ? <CustomCalendar/> : ''
             }
           </Grid>
           <Grid item xs={4}>
